@@ -1,0 +1,822 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EPPlus.Core.Extensions</name>
+    </assembly>
+    <members>
+        <member name="T:EPPlus.Core.Extensions.Configuration.DefaultExcelConfiguration`1">
+            <summary>
+                Default configurations
+            </summary>
+        </member>
+        <member name="P:EPPlus.Core.Extensions.Configuration.IExcelConfiguration`1.SkipCastingErrors">
+            <summary>
+                Determines how the method should handle exceptions when casting cell value to property type.
+                If this is true, invalid casts are silently skipped, otherwise any error will cause method to fail with exception.
+            </summary>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelColumnExtensions.SetFont(OfficeOpenXml.ExcelColumn,System.Drawing.Font)">
+            <summary>
+                Sets the font of ExcelColumn from a Font object
+            </summary>
+            <param name="column"></param>
+            <param name="font"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelColumnExtensions.SetFontColor(OfficeOpenXml.ExcelColumn,System.Drawing.Color)">
+            <summary>
+                Sets the font color of ExcelColumn from a Color object
+            </summary>
+            <param name="column"></param>
+            <param name="fontColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelColumnExtensions.SetBackgroundColor(OfficeOpenXml.ExcelColumn,System.Drawing.Color,OfficeOpenXml.Style.ExcelFillStyle)">
+            <summary>
+                Sets the background color of ExcelColumn from a Color object
+            </summary>
+            <param name="column"></param>
+            <param name="backgroundColor"></param>
+            <param name="fillStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelColumnExtensions.SetHorizontalAlignment(OfficeOpenXml.ExcelColumn,OfficeOpenXml.Style.ExcelHorizontalAlignment)">
+            <summary>
+                Sets the horizontal alignment of ExcelColumn
+            </summary>
+            <param name="column"></param>
+            <param name="horizontalAlignment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelColumnExtensions.SetVerticalAlignment(OfficeOpenXml.ExcelColumn,OfficeOpenXml.Style.ExcelVerticalAlignment)">
+            <summary>
+                Sets the vertical alignment of ExcelColumn
+            </summary>
+            <param name="column"></param>
+            <param name="verticalAlignment"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EPPlus.Core.Extensions.ExcelPackageExtensions">
+            <summary>
+                Class holds extensions on ExcelPackage object
+            </summary>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelPackageExtensions.GetTables(OfficeOpenXml.ExcelPackage)">
+            <summary>
+                Returns all table names in the opened worksheet
+            </summary>
+            <remarks>Excel is ensuring the uniqueness of table names</remarks>
+            <param name="package">The ExcelPackage object</param>
+            <returns>Enumeration of ExcelTables</returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelPackageExtensions.GetTable(OfficeOpenXml.ExcelPackage,System.String)">
+            <summary>
+                Returns concrete ExcelTable by its name
+            </summary>
+            <param name="package">The ExcelPackage object</param>
+            <param name="name">Name of the table</param>
+            <returns>ExcelTable object if found, null if not</returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelPackageExtensions.HasTable(OfficeOpenXml.ExcelPackage,System.String)">
+            <summary>
+                Checks that given table name is in the ExcelPackage or not
+            </summary>
+            <param name="package">The ExcelPackage object</param>
+            <param name="name">Name of the table</param>
+            <returns>Result of search as bool</returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelPackageExtensions.ToDataSet(OfficeOpenXml.ExcelPackage,System.Boolean)">
+            <summary>
+                Extracts a DataSet from the ExcelPackage.
+            </summary>
+            <param name="package">The ExcelPackage.</param>
+            <param name="hasHeaderRow">Indicates whether worksheet has a header row or not.</param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelPackageExtensions.AsEnumerable``1(OfficeOpenXml.ExcelPackage,System.Int32,System.Action{EPPlus.Core.Extensions.Configuration.IExcelConfiguration{``0}})">
+            <summary>
+                Yields objects of specified type from given ExcelPackage
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="package"></param>
+            <param name="configurationAction"></param>
+            <param name="worksheetIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelPackageExtensions.ToList``1(OfficeOpenXml.ExcelPackage,System.Int32,System.Action{EPPlus.Core.Extensions.Configuration.IExcelConfiguration{``0}})">
+            <summary>
+                Converts given ExcelPackage to list of objects
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="package"></param>
+            <param name="worksheetIndex"></param>
+            <param name="configurationAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelRangeExtensions.SetFont(OfficeOpenXml.ExcelRangeBase,System.Drawing.Font)">
+            <summary>
+                Sets the font of given range from a Font object
+            </summary>
+            <param name="range"></param>
+            <param name="font"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelRangeExtensions.SetFontColor(OfficeOpenXml.ExcelRangeBase,System.Drawing.Color)">
+            <summary>
+                Sets the font color of given range from a Color object
+            </summary>
+            <param name="range"></param>
+            <param name="fontColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelRangeExtensions.SetBackgroundColor(OfficeOpenXml.ExcelRangeBase,System.Drawing.Color,OfficeOpenXml.Style.ExcelFillStyle)">
+            <summary>
+                Sets the background color of given range from a Color object
+            </summary>
+            <param name="range"></param>
+            <param name="backgroundColor"></param>
+            <param name="fillStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelRangeExtensions.SetHorizontalAlignment(OfficeOpenXml.ExcelRangeBase,OfficeOpenXml.Style.ExcelHorizontalAlignment)">
+            <summary>
+                Sets the horizontal alignment of given range
+            </summary>
+            <param name="range"></param>
+            <param name="horizontalAlignment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelRangeExtensions.SetVerticalAlignment(OfficeOpenXml.ExcelRangeBase,OfficeOpenXml.Style.ExcelVerticalAlignment)">
+            <summary>
+                Sets the vertical alignment of given range
+            </summary>
+            <param name="range"></param>
+            <param name="verticalAlignment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelRangeExtensions.BorderAround(OfficeOpenXml.ExcelRangeBase,OfficeOpenXml.Style.ExcelBorderStyle)">
+            <summary>
+                Sets the border style of given range
+            </summary>
+            <param name="range"></param>
+            <param name="style"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelRangeExtensions.SetBorderColor(OfficeOpenXml.ExcelRangeBase,System.Drawing.Color)">
+            <summary>
+                Sets the border color of given range
+            </summary>
+            <param name="range"></param>
+            <param name="color"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelRangeExtensions.BorderAround(OfficeOpenXml.ExcelRangeBase,OfficeOpenXml.Style.ExcelBorderStyle,System.Drawing.Color)">
+            <summary>
+                Sets the border style and color of given range
+            </summary>
+            <param name="range"></param>
+            <param name="style"></param>
+            <param name="color"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelRowExtensions.SetFont(OfficeOpenXml.ExcelRow,System.Drawing.Font)">
+            <summary>
+                Sets the font of ExcelRow from a Font object
+            </summary>
+            <param name="row"></param>
+            <param name="font"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelRowExtensions.SetFontColor(OfficeOpenXml.ExcelRow,System.Drawing.Color)">
+            <summary>
+                Sets the font color of ExcelRow from a Color object
+            </summary>
+            <param name="row"></param>
+            <param name="fontColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelRowExtensions.SetBackgroundColor(OfficeOpenXml.ExcelRow,System.Drawing.Color,OfficeOpenXml.Style.ExcelFillStyle)">
+            <summary>
+                Sets the background color of ExcelRow from a Color object
+            </summary>
+            <param name="row"></param>
+            <param name="backgroundColor"></param>
+            <param name="fillStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelRowExtensions.SetHorizontalAlignment(OfficeOpenXml.ExcelRow,OfficeOpenXml.Style.ExcelHorizontalAlignment)">
+            <summary>
+                Sets the horizontal alignment of ExcelRow
+            </summary>
+            <param name="row"></param>
+            <param name="horizontalAlignment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelRowExtensions.SetVerticalAlignment(OfficeOpenXml.ExcelRow,OfficeOpenXml.Style.ExcelVerticalAlignment)">
+            <summary>
+                Sets the vertical alignment of ExcelRow
+            </summary>
+            <param name="row"></param>
+            <param name="verticalAlignment"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EPPlus.Core.Extensions.ExcelTableColumnAttribute">
+            <inheritdoc />
+            <summary>
+                Attribute used to map property to Excel table column
+            </summary>
+            <remarks>Can not map by both name and index. It will map to the property name if none is specified</remarks>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelTableColumnAttribute.#ctor(System.Int32)">
+            <inheritdoc />
+            <summary>
+                Set this property to map by 1-based index
+            </summary>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelTableColumnAttribute.#ctor(System.String)">
+            <inheritdoc />
+            <summary>
+                Set this property to map by name
+            </summary>
+        </member>
+        <member name="P:EPPlus.Core.Extensions.ExcelTableColumnAttribute.ColumnName">
+            <summary>
+                Set this property to map by name
+            </summary>
+        </member>
+        <member name="P:EPPlus.Core.Extensions.ExcelTableColumnAttribute.ColumnIndex">
+            <summary>
+                Use this property to map by 1-based index
+            </summary>
+        </member>
+        <member name="T:EPPlus.Core.Extensions.ExcelTableConvertException">
+            <inheritdoc />
+            <summary>
+                Class extends exception to hold casting exception circumstances
+            </summary>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelTableConvertException.#ctor">
+            <inheritdoc />
+            <summary>
+                Default constructor
+            </summary>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelTableConvertException.#ctor(System.String)">
+            <inheritdoc />
+            <summary>
+                Constructor with message
+            </summary>
+            <param name="message">Exception message</param>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelTableConvertException.#ctor(System.String,System.Exception)">
+            <inheritdoc />
+            <summary>
+                Constructor with message and inner exception
+            </summary>
+            <param name="message">Exception message</param>
+            <param name="inner">Inner exception</param>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelTableConvertException.#ctor(System.String,System.Exception,EPPlus.Core.Extensions.ExcelTableExceptionArgs)">
+            <inheritdoc />
+            <summary>
+                Custom constructor that takes message, inner exception and conversion arguments
+            </summary>
+            <param name="message">Exception message</param>
+            <param name="inner">Actual conversion exception catched</param>
+            <param name="args">Information related to the circumstances of the exception</param>
+        </member>
+        <member name="T:EPPlus.Core.Extensions.ExcelTableExceptionArgs">
+            <summary>
+                Class contains exception circumstances
+            </summary>
+        </member>
+        <member name="P:EPPlus.Core.Extensions.ExcelTableExceptionArgs.PropertyName">
+            <summary>
+                Property that was tried to set
+            </summary>
+        </member>
+        <member name="P:EPPlus.Core.Extensions.ExcelTableExceptionArgs.ColumnName">
+            <summary>
+                Column that was mapped to this property
+            </summary>
+        </member>
+        <member name="P:EPPlus.Core.Extensions.ExcelTableExceptionArgs.ExpectedType">
+            <summary>
+                Type of the property
+            </summary>
+        </member>
+        <member name="P:EPPlus.Core.Extensions.ExcelTableExceptionArgs.CellValue">
+            <summary>
+                Cell value returned by EPPlus
+            </summary>
+        </member>
+        <member name="P:EPPlus.Core.Extensions.ExcelTableExceptionArgs.CellAddress">
+            <summary>
+                Absolute address of the cell, where the conversion error occured
+            </summary>
+        </member>
+        <member name="T:EPPlus.Core.Extensions.ExcelTableExtensions">
+            <summary>
+                Class holds extensions on ExcelTable object
+            </summary>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelTableExtensions.GetDataBounds(OfficeOpenXml.Table.ExcelTable)">
+            <summary>
+                Returns table data bounds with regards to header and totals row visibility
+            </summary>
+            <param name="table">Extended object</param>
+            <returns>Address range</returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelTableExtensions.Validate``1(OfficeOpenXml.Table.ExcelTable)">
+            <summary>
+                Validates the excel table against the generating type.
+            </summary>
+            <typeparam name="T">Generating class type</typeparam>
+            <param name="table">Extended object</param>
+            <returns>An enumerable of <see cref="T:EPPlus.Core.Extensions.ExcelTableExceptionArgs" /> containing </returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelTableExtensions.AsEnumerable``1(OfficeOpenXml.Table.ExcelTable,System.Action{EPPlus.Core.Extensions.Configuration.IExcelConfiguration{``0}})">
+            <summary>
+                Generic extension method yielding objects of specified type from table.
+            </summary>
+            <remarks>
+                Exceptions are not catched. It works on all or nothing basis.
+                Only primitives and enums are supported as property.
+                Currently supports only tables with header.
+            </remarks>
+            <typeparam name="T">Type to map to. Type should be a class and should have parameterless constructor.</typeparam>
+            <param name="table">Table object to fetch</param>
+            <param name="configurationAction"></param>
+            <returns>An enumerable of the generating type</returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelTableExtensions.ToList``1(OfficeOpenXml.Table.ExcelTable,System.Action{EPPlus.Core.Extensions.Configuration.IExcelConfiguration{``0}})">
+            <summary>
+                Returns objects of specified type from table as list.
+            </summary>
+            <remarks>
+                Exceptions are not catched. It works on all or nothing basis.
+                Only primitives and enums are supported as property.
+                Currently supports only tables with header.
+            </remarks>
+            <typeparam name="T">Type to map to. Type should be a class and should have parameterless constructor.</typeparam>
+            <param name="table">Table object to fetch</param>
+            <param name="configurationAction"></param>
+            <returns>An enumerable of the generating type</returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelTableExtensions.PrepareMappings``1(OfficeOpenXml.Table.ExcelTable)">
+            <summary>
+                Prepares mapping using the type and the attributes decorating its properties
+            </summary>
+            <typeparam name="T">Type to parse</typeparam>
+            <param name="table">Table to get columns from</param>
+            <returns>A list of mappings from column index to property</returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelTableExtensions.TrySetProperty(System.Object,System.Reflection.PropertyInfo,System.Object)">
+            <summary>
+                Tries to set property of item
+            </summary>
+            <param name="item">target object</param>
+            <param name="property">property to be set</param>
+            <param name="cell">cell value</param>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.GetDataBounds(OfficeOpenXml.ExcelWorksheet,System.Boolean)">
+            <summary>
+                Returns given ExcelWorksheet data bounds as ExcelAddress
+            </summary>
+            <param name="worksheet"></param>
+            <param name="hasHeaderRow"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.GetExcelRange(OfficeOpenXml.ExcelWorksheet,System.Boolean)">
+            <summary>
+                Returns given ExcelWorksheet data cell ranges as ExcelRange
+            </summary>
+            <param name="worksheet"></param>
+            <param name="hasHeaderRow"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.AsExcelTable(OfficeOpenXml.ExcelWorksheet,System.Boolean)">
+            <summary>
+                Extracts an ExcelTable from given ExcelWorkSheet
+            </summary>
+            <param name="worksheet"></param>
+            <param name="hasHeaderRow"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.HasAnyFormula(OfficeOpenXml.ExcelWorksheet)">
+            <summary>
+                Indicates whether the ExcelWorksheet contains any formula or not
+            </summary>
+            <param name="worksheet"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.ToDataTable(OfficeOpenXml.ExcelWorksheet,System.Boolean)">
+            <summary>
+                Extracts a DataTable from the ExcelWorksheet.
+            </summary>
+            <param name="worksheet">The ExcelWorksheet.</param>
+            <param name="hasHeaderRow">Indicates whether worksheet has a header row or not.</param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.AsEnumerable``1(OfficeOpenXml.ExcelWorksheet,System.Action{EPPlus.Core.Extensions.Configuration.IExcelConfiguration{``0}})">
+            <summary>
+                Generic extension method yielding objects of specified type from the ExcelWorksheet
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="worksheet"></param>
+            <param name="configurationAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.ToList``1(OfficeOpenXml.ExcelWorksheet,System.Action{EPPlus.Core.Extensions.Configuration.IExcelConfiguration{``0}})">
+            <summary>
+                Returns objects of specified type from the ExcelWorksheet as a list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="worksheet"></param>
+            <param name="configurationAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.ChangeCellValue(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32,System.Object,System.Action{OfficeOpenXml.ExcelRange})">
+            <summary>
+                Changes value of the specified cell
+            </summary>
+            <param name="worksheet"></param>
+            <param name="rowIndex"></param>
+            <param name="columnIndex"></param>
+            <param name="value"></param>
+            <param name="configureCell"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.AddHeader(OfficeOpenXml.ExcelWorksheet,System.String[])">
+            <summary>
+                Inserts a header line to the top of the Excel worksheet
+            </summary>
+            <param name="worksheet"></param>
+            <param name="headerTexts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.AddHeader(OfficeOpenXml.ExcelWorksheet,System.Action{OfficeOpenXml.ExcelRange},System.String[])">
+            <summary>
+                Inserts a header line to the top of the Excel worksheet
+            </summary>
+            <param name="worksheet"></param>
+            <param name="configureHeader"></param>
+            <param name="headerTexts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.AddLine(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Object[])">
+            <summary>
+                Adds a line to the worksheet
+            </summary>
+            <param name="worksheet"></param>
+            <param name="rowIndex"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.AddLine(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Action{OfficeOpenXml.ExcelRange},System.Object[])">
+            <summary>
+                Adds a line to the worksheet
+            </summary>
+            <param name="worksheet"></param>
+            <param name="rowIndex"></param>
+            <param name="configureCells"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.AddLine(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32,System.Action{OfficeOpenXml.ExcelRange},System.Object[])">
+            <summary>
+                Adds a line to the worksheet
+            </summary>
+            <param name="worksheet"></param>
+            <param name="rowIndex"></param>
+            <param name="startColumnIndex"></param>
+            <param name="configureCells"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.AddObjects``1(OfficeOpenXml.ExcelWorksheet,System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32,System.Action{OfficeOpenXml.ExcelRange})">
+            <summary>
+                Adds given list of objects to the worksheet
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="worksheet"></param>
+            <param name="items"></param>
+            <param name="startRowIndex"></param>
+            <param name="startColumnIndex"></param>
+            <param name="configureCells"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.AddObjects``1(OfficeOpenXml.ExcelWorksheet,System.Collections.Generic.IEnumerable{``0},System.Int32,System.Func{``0,System.Object}[])">
+            <summary>
+                Adds given list of objects to the worksheet with propery selectors
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="worksheet"></param>
+            <param name="items"></param>
+            <param name="startRowIndex"></param>
+            <param name="propertySelectors"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.AddObjects``1(OfficeOpenXml.ExcelWorksheet,System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32,System.Action{OfficeOpenXml.ExcelRange},System.Func{``0,System.Object}[])">
+            <summary>
+                Adds given list of objects to the worksheet with propery selectors
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="worksheet"></param>
+            <param name="items"></param>
+            <param name="startRowIndex"></param>
+            <param name="startColumnIndex"></param>
+            <param name="configureCells"></param>
+            <param name="propertySelectors"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.GetColumns(OfficeOpenXml.ExcelWorksheet,System.Int32)">
+            <summary>
+                Returns index and value pairs of columns
+            </summary>
+            <param name="worksheet"></param>
+            <param name="rowIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.DeleteColumn(OfficeOpenXml.ExcelWorksheet,System.String)">
+            <summary>
+                Deletes a column from worksheet by using column header text
+            </summary>
+            <param name="worksheet"></param>
+            <param name="headerText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.DeleteColumns(OfficeOpenXml.ExcelWorksheet,System.String)">
+            <summary>
+                Deletes columns from worksheet by using given header text
+            </summary>
+            <param name="worksheet"></param>
+            <param name="headerText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.CheckAndThrowColumn(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+                Checks and throws if column value is wrong on specified index
+            </summary>
+            <param name="worksheet"></param>
+            <param name="rowIndex"></param>
+            <param name="columnIndex"></param>
+            <param name="expectedValue"></param>
+            <param name="exceptionMessage">The {columnIndex}. column of worksheet should be '{expectedValue}'.</param>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.CheckHeadersAndThrow``1(OfficeOpenXml.ExcelWorksheet,System.Int32,System.String)">
+            <summary>
+                Checks and throws if header columns does not match with ExcelColumnAttribute
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="worksheet"></param>
+            <param name="headerRowIndex"></param>
+            <param name="formattedExceptionMessage"></param>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.CheckColumnValueIsNullOrEmpty(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32)">
+            <summary>
+                Checks whether given worksheet address has a value or not
+            </summary>
+            <param name="worksheet"></param>
+            <param name="rowIndex"></param>
+            <param name="columnIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.GetValuedDimension(OfficeOpenXml.ExcelWorksheet)">
+            <summary>
+                Gets valued dimensions of worksheet
+            </summary>
+            <param name="worksheet"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.SetFont(OfficeOpenXml.ExcelWorksheet,System.Drawing.Font)">
+            <summary>
+                Sets the font of ExcelWorksheet cells from a Font object
+            </summary>
+            <param name="worksheet"></param>
+            <param name="font"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.SetFont(OfficeOpenXml.ExcelWorksheet,OfficeOpenXml.ExcelRange,System.Drawing.Font)">
+            <summary>
+                Sets the font of given cell range from a Font object
+            </summary>
+            <param name="worksheet"></param>
+            <param name="cellRange"></param>
+            <param name="font"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.SetFontColor(OfficeOpenXml.ExcelWorksheet,System.Drawing.Color)">
+            <summary>
+                Sets the font color of ExcelWorksheet cells from a Color object
+            </summary>
+            <param name="worksheet"></param>
+            <param name="fontColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.SetFontColor(OfficeOpenXml.ExcelWorksheet,OfficeOpenXml.ExcelRange,System.Drawing.Color)">
+            <summary>
+                Sets the font color of given cell range from a Color object
+            </summary>
+            <param name="worksheet"></param>
+            <param name="cellRange"></param>
+            <param name="fontColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.SetBackgroundColor(OfficeOpenXml.ExcelWorksheet,System.Drawing.Color,OfficeOpenXml.Style.ExcelFillStyle)">
+            <summary>
+                Sets the background color of ExcelWorksheet cells from a Color object
+            </summary>
+            <param name="worksheet"></param>
+            <param name="backgroundColor"></param>
+            <param name="fillStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.SetBackgroundColor(OfficeOpenXml.ExcelWorksheet,OfficeOpenXml.ExcelRange,System.Drawing.Color,OfficeOpenXml.Style.ExcelFillStyle)">
+            <summary>
+                Sets the background color of given cell range from a Color object
+            </summary>
+            <param name="worksheet"></param>
+            <param name="cellRange"></param>
+            <param name="backgroundColor"></param>
+            <param name="fillStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.SetHorizontalAlignment(OfficeOpenXml.ExcelWorksheet,OfficeOpenXml.Style.ExcelHorizontalAlignment)">
+            <summary>
+                Sets the horizontal alignment of ExcelWorksheet cells
+            </summary>
+            <param name="worksheet"></param>
+            <param name="horizontalAlignment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.SetHorizontalAlignment(OfficeOpenXml.ExcelWorksheet,OfficeOpenXml.ExcelRange,OfficeOpenXml.Style.ExcelHorizontalAlignment)">
+            <summary>
+                Sets the horizontal alignment of given cell range
+            </summary>
+            <param name="worksheet"></param>
+            <param name="cellRange"></param>
+            <param name="horizontalAlignment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.SetVerticalAlignment(OfficeOpenXml.ExcelWorksheet,OfficeOpenXml.Style.ExcelVerticalAlignment)">
+            <summary>
+                Sets the vertical alignment of ExcelWorksheet cells
+            </summary>
+            <param name="worksheet"></param>
+            <param name="verticalAlignment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ExcelWorksheetExtensions.SetVerticalAlignment(OfficeOpenXml.ExcelWorksheet,OfficeOpenXml.ExcelRange,OfficeOpenXml.Style.ExcelVerticalAlignment)">
+            <summary>
+                Sets the vertical alignment of given cell range
+            </summary>
+            <param name="worksheet"></param>
+            <param name="cellRange"></param>
+            <param name="verticalAlignment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ToExcelExtensions.ToWorksheet``1(System.Collections.Generic.IEnumerable{``0},System.String,System.Action{EPPlus.Core.Extensions.Configuration.IExcelConfiguration{``0}})">
+            <summary>
+                Generates an Excel worksheet from a list
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="rows"></param>
+            <param name="name"></param>
+            <param name="configurationAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ToExcelExtensions.NextWorksheet``2(EPPlus.Core.Extensions.WorksheetWrapper{``1},System.Collections.Generic.IEnumerable{``0},System.String,System.Action{EPPlus.Core.Extensions.Configuration.IExcelConfiguration{``0}})">
+            <summary>
+                Starts new worksheet on same Excel package
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="K"></typeparam>
+            <param name="previousSheet"></param>
+            <param name="rows"></param>
+            <param name="name"></param>
+            <param name="configurationAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ToExcelExtensions.WithColumn``1(EPPlus.Core.Extensions.WorksheetWrapper{``0},System.Func{``0,System.Object},System.String,System.Action{EPPlus.Core.Extensions.Configuration.IExcelConfiguration{``0}})">
+            <summary>
+                Adds a column mapping.  If no column mappings are specified all public properties will be used
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="worksheet"></param>
+            <param name="map"></param>
+            <param name="columnHeader"></param>
+            <param name="configurationAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ToExcelExtensions.WithTitle``1(EPPlus.Core.Extensions.WorksheetWrapper{``0},System.String,System.Action{OfficeOpenXml.ExcelRange})">
+            <summary>
+                Adds a title row to the top of the sheet
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="worksheet"></param>
+            <param name="title"></param>
+            <param name="configureTitle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ToExcelExtensions.WithoutHeader``1(EPPlus.Core.Extensions.WorksheetWrapper{``0})">
+            <summary>
+                Indicates that the worksheet should not contain a header row
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="worksheet"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ToExcelExtensions.ToExcelPackage``1(System.Collections.Generic.IEnumerable{``0},System.Boolean,System.String)">
+            <summary>
+                Converts given list of objects to ExcelPackage
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="rows"></param>
+            <param name="addHeaderRow"></param>
+            <param name="worksheetName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ToExcelExtensions.GetAsExcelPackage(System.Byte[])">
+            <summary>
+                Creates a new instance of the ExcelPackage class based on a byte array
+            </summary>
+            <param name="buffer">The byte array</param>
+            <returns>An ExcelPackages</returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ToExcelExtensions.GetAsExcelPackage(System.Byte[],System.String)">
+            <summary>
+                Creates a new instance of the ExcelPackage class based on a byte array
+            </summary>
+            <param name="buffer">The byte array</param>
+            <param name="password">The password to decrypt the document</param>
+            <returns>An ExcelPackages</returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ToExcelExtensions.ToXlsx``1(System.Collections.Generic.IEnumerable{``0},System.Boolean)">
+            <summary>
+                Converts list of items to Excel and returns the Excel file as a bytearray.
+            </summary>
+            <typeparam name="T">Type of object</typeparam>
+            <param name="rows">List of objects</param>
+            <param name="addHeaderRow">Add header row to worksheet</param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.ToExcelExtensions.ToXlsx``1(EPPlus.Core.Extensions.WorksheetWrapper{``0})">
+            <summary>
+                Returns the Excel file as a bytearray.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="lastWorksheet"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.TypeExtensions.IsNullable(System.Type)">
+            <summary>
+                Determines whether given type is nullable or not
+            </summary>
+            <param name="type">Type to test</param>
+            <returns>True if type is nullable</returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.TypeExtensions.IsNumeric(System.Type)">
+            <summary>
+                Tests whether given type is numeric or not
+            </summary>
+            <param name="type">Type to test</param>
+            <returns>True if type is numeric</returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.TypeExtensions.GetPropertyValue(System.Object,System.String)">
+            <summary>
+                Returns value of the property name
+            </summary>
+            <param name="obj"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.TypeExtensions.GetExcelTableColumnAttributes``1(System.Type)">
+            <summary>
+                Returns PropertyInfo and ExcelTableColumnAttribute pairs of given type
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.WorksheetWrapper`1.AutoGenerateColumns">
+            <summary>
+                Generates columns for all public properties on the type
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.WorksheetWrapper`1.AppendWorksheet">
+            <summary>
+                Wraps creation of an Excel worksheet
+            </summary>
+        </member>
+        <member name="M:EPPlus.Core.Extensions.WorksheetWrapper`1.GetGetter``1(System.String)">
+            <summary>
+                Generates a Func from a propertyName
+            </summary>
+            <typeparam name="TP"></typeparam>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
